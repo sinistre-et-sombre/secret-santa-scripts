@@ -1,8 +1,11 @@
+"""
+The Inscriptions class
+"""
 from recutils import parse_file
 
 class Inscriptions:
     """
-    This class handles inscriptions
+    This class handles inscriptions, loaded from a recfile
     """
 
     def __init__(self):
@@ -12,7 +15,7 @@ class Inscriptions:
         """
         Load data from a recfile
         """
-        with open(recfile, "r") as f:
+        with open(recfile, "r", encoding="utf-8") as f:
             rec_data = parse_file(f)
         for rs in rec_data:
             print(rs)
@@ -37,9 +40,11 @@ class Inscriptions:
         """
         lines = []
         for inscription in self.inscriptions:
-            lines.append(f"{inscription["nom"]} ({inscription["adresse"]} [{inscription["inspiration"]}])")
+            lines.append(f"{inscription["nom"]} ({inscription["adresse"]} [{
+                inscription["inspiration"]}])")
             if not inscription["international"]:
-                lines[-1] = lines[-1] + f" {" ".join(["!"+nom for nom in self._get_non_france_inscriptions()])}"
+                lines[-1] = lines[-1] + f" {" ".join(["!"+nom for nom in
+                self._get_non_france_inscriptions()])}"
         return "\n".join(lines)
 
     def _get_non_france_inscriptions(self) -> list[str]:
@@ -47,4 +52,3 @@ class Inscriptions:
         Returns a list of the names of every inscriptions not located in france
         """
         return [i["nom"] for i in filter(lambda ins: not ins["est_fr"], self.inscriptions)]
-
