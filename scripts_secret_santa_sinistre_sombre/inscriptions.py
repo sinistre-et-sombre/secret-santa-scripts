@@ -18,7 +18,6 @@ class Inscriptions:
         with open(recfile, "r", encoding="utf-8") as f:
             rec_data = parse_file(f)
         for rs in rec_data:
-            print(rs)
             if rs.descriptor.record_type != "Inscrit":
                 continue
             for record in rs.records:
