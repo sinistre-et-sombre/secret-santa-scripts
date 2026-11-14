@@ -13,9 +13,12 @@
 Nom: Lucifer
 Adresse: 666 Rue de Cerbère, Sixième Cercle, Enfers
 Inspiration: Soufre, Fausse idole, Diablotin
+# International : Ok pour un envoi hors de la france métropolitaine ?
 International: Oui
-Notes: Pas de pairing avec l’Archange Michel svp
+# Est_Fr : Est-ce que l’adresse est en france métropolitaine ?
 Est_Fr: Oui
+# Champ libre, géré "à la main"
+Notes: Pas de pairing avec l’Archange Michel svp
 
 Nom: Michel
 Adresse: Jardins florissants, Paradis

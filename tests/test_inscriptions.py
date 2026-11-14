@@ -25,6 +25,15 @@ class TestInscriptions:
         inscriptions = Inscriptions()
         inscriptions.load_recfile(inscription_recfile_example)
         res = inscriptions.export_to_arcanis()
-        validates = "Lucifer (666 Rue de Cerbère, Sixième Cercle, Enfers [Soufre, Fausse idole, Diablotin])\nMichel (Jardins florissants, Paradis [Guerrier, pureté, balance])\nPère Noël (Ateliers Noël, Rovaniemi, Finlande [Joie, Neige, Renne])"
+        validates = """Lucifer (666 Rue de Cerbère, Sixième Cercle, Enfers [Soufre, Fausse idole, Diablotin])
+Michel (Jardins florissants, Paradis [Guerrier, pureté, balance]) !Père Noël
+Père Noël (Ateliers Noël, Rovaniemi, Finlande [Joie, Neige, Renne])"""
         assert res == validates
 
+    def test_get_non_france_inscriptions(self):
+        inscription_recfile_example = "inscriptions.rec.example"
+        inscriptions = Inscriptions()
+        inscriptions.load_recfile(inscription_recfile_example)
+        res = inscriptions._get_non_france_inscriptions()
+        assert res == ["Père Noël"]
+        

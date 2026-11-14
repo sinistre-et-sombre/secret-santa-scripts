@@ -37,7 +37,14 @@ class Inscriptions:
         """
         lines = []
         for inscription in self.inscriptions:
-            lines.append(f"{inscription["nom"]} ({inscription["adresse"]} [{inscription["inspiration"]}])") # TODO no international management
+            lines.append(f"{inscription["nom"]} ({inscription["adresse"]} [{inscription["inspiration"]}])")
+            if not inscription["international"]:
+                lines[-1] = lines[-1] + f" {" ".join(["!"+nom for nom in self._get_non_france_inscriptions()])}"
         return "\n".join(lines)
 
+    def _get_non_france_inscriptions(self) -> list[str]:
+        """
+        Returns a list of the names of every inscriptions not located in france
+        """
+        return [i["nom"] for i in filter(lambda ins: not ins["est_fr"], self.inscriptions)]
 
