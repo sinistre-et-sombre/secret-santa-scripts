@@ -8,4 +8,3 @@ from scripts_secret_santa_sinistre_sombre.inscriptions import Inscriptions
 inscriptions = Inscriptions()
 inscriptions.load_recfile(os.environ["INSCRIPTIONS_RECFILE"])
 print(inscriptions.export_to_arcanis())
-
