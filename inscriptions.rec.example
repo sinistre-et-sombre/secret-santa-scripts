@@ -1,0 +1,25 @@
+# -*- mode: rec -*-
+
+%rec: Inscrit
+%doc: Personnes inscrites au Secret Santa Sinistre & Sombre 2026
+%mandatory: Nom
+%mandatory: Adresse
+%allowed: Inspiration International Notes
+%typedef: International_t enum Oui Non
+%type: International International_t
+
+Nom: Lucifer
+Adresse: 666 Rue de Cerbère, Sixième Cercle, Enfers
+Inspiration: Soufre, Fausse idole, Diablotin
+International: Non
+Notes: Pas de pairing avec l’Archange Michel svp
+
+Nom: Michel
+Adresse: Jardins florissants, Paradis
+Inspiration: Guerrier, pureté, balance
+International: Non
+
+Nom: Père Noël
+Adresse: Ateliers Noël, Rovaniemi, Finlande
+Inspiration: Joie, Neige, Renne
+International: Oui
