@@ -1,6 +1,6 @@
 [project]
-name = "Sinistre & Sombre Secret Santa Script"
-description = "This project manages the Secret Santa Sinistre & Sombre"
+name = "scripts-secret-santa-sinistre-sombre"
+description = "Ce projet gère les scripts pour le Secret Santa Sinistre & Sombre."
 version = "0.0.1"
 authors = [
 	{name = "Ashnaki"}
@@ -9,10 +9,19 @@ readme = "README.md"
 license = "LicenseRef-FilthyHumanHands-1.0"
 license-files = ["LICENSE.txt"]
 
+
+requires-python = ">= 3.14"
+
 dependencies = [
 	"python-recutils~=1.0.0"
 ]
-requires-python = ">= 3.14"
+
+#[project.optional-dependencies]
+[dependency-groups]
+dev = [
+	"pytest~=9.2.0",
+	"pylint~=4.1.3"
+]
 
 [project.urls]
 Repository = "https://github.com/sinistre-et-sombre/secret-santa-scripts"
