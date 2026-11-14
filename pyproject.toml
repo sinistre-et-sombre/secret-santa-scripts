@@ -1,7 +1,7 @@
 [project]
 name = "scripts-secret-santa-sinistre-sombre"
 description = "Ce projet gère les scripts pour le Secret Santa Sinistre & Sombre."
-version = "0.0.1"
+version = "1.0.0"
 authors = [
 	{name = "Ashnaki"}
 ]
